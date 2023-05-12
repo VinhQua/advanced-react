@@ -1,9 +1,9 @@
-import NavBar from "./09-ContextAPI/ContextNavBar/NavBar";
+import Starter from "./11-Performance/03-hooks";
 
 function App() {
   return (
     <div className="">
-      <NavBar />
+      <Starter />
     </div>
   );
 }
