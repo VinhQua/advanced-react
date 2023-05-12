@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const URI = `https://api.github.com/users`;
 function UseEffectFetch() {
   const [users, setUsers] = useState([]);
-  const fetchUsers = async (URI) => {
+  const fetchUsers = useCallback(async (URI) => {
     try {
       const res = await axios.get(URI);
       setUsers(() => {
@@ -13,7 +13,7 @@ function UseEffectFetch() {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, []);
   useEffect(() => {
     fetchUsers(URI);
   }, []);
